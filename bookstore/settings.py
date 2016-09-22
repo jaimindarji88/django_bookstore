@@ -70,7 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social.apps.django_app.context_processors.backend',
+                'social.apps.django_app.context_processors.backends',
                 'social.apps.django_app.context_processors.login_redirect'
             ],
         },
@@ -148,5 +148,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "DANKMEMES.com"
 
-SOCIAL_AUTH_FACEBOOK_KEY = ''
-SOCIAL_AUTH_FACEBOOK_SECRET = ''
+SOCIAL_AUTH_FACEBOOK_KEY = '***REMOVED***'
+SOCIAL_AUTH_FACEBOOK_SECRET = '***REMOVED***'
