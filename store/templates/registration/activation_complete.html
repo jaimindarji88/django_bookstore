@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,9 @@
 </head>
 <body>
 <h1>
+    {% block content %}
     Your account has been activated
+    {% endblock %}
 </h1>
 </body>
 </html>
