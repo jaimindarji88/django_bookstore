@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'bootstrap3',
     'bootstrap_themes',
     'registration',
-    'store'
+    'compressor',
+    'store',
 ]
 
 SITE_ID = 1
@@ -134,6 +135,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+COMPRESS_ENABLED = True
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder'
+)
 
 
 # Registration
