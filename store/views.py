@@ -7,12 +7,16 @@ def index(request):
 
 
 def store(request):
-    count = Book.objects.all().count()
+    books = Book.objects.all()
     context = {
-        'count': count,
+        'books': books,
     }
-    request.session['location'] = 'unknown'
-    if request.user.is_authenticated():
-        request.session['location'] = 'earth'
 
     return render(request, 'base.html', context)
+
+def book_details(request, book_id):
+    context = {
+        'book': Book.objects.get(pk=book_id)
+    }
+
+    return render(request, 'store/detail.html', context=context)
