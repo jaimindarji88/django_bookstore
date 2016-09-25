@@ -1,15 +1,23 @@
 {% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Title</title>
 </head>
 <body>
-{% block content %}
-<h1>
-    Registering with mystery books, you should recieve activation email soon.
-</h1>
+{% block body %}
+<div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 loginbox">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Registration Complete
+        </div>
+        <div style="padding-top:30px;" class="panel-body">
+            Thank you for registering for the book store
+        </div>
+    </div>
+</div>
 {% endblock %}
 </body>
 </html>

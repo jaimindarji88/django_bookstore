@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +7,17 @@
     <title>Title</title>
 </head>
 <body>
-<h1>
-    {% block content %}
-    Your account has been activated
-    {% endblock %}
-</h1>
+{% block body %}
+<div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 loginbox">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Your account has been activated.
+        </div>
+        <div style="padding-top:30px;" class="panel-body">
+            Success. Your account has been activated
+        </div>
+    </div>
+</div>
+{% endblock %}
 </body>
 </html>
