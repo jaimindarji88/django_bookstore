@@ -138,3 +138,5 @@ ENV/
 
 # Compiled static assets
 static
+
+passwords.txt
