@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils import timezone
 from django.http import JsonResponse
 import paypalrestsdk, stripe
@@ -86,7 +86,6 @@ def checkout(request, processor):
             redirect_url = checkout_paypal(request, cart,orders)
             return redirect(redirect_url)
         elif processor == 'stripe':
-            print request.POST
             token = request.POST['stripeToken']
             status = checkout_stripe(cart, orders, token)
             if status:
@@ -178,7 +177,6 @@ def process_order(request, processor):
                 }
             return render(request, 'store/process_order.html', context)
         elif processor == 'stripe':
-            print reverse('complete_order', args=['stripe'])
             return JsonResponse({'redirect_url': reverse('complete_order', args=['stripe'])})
     else:
         return redirect('index')

@@ -41,7 +41,7 @@
                     <img src="{% static 'base/img/stripe.png' %}" id="customButton">
                     <script>
                         var csrftoken = $.cookie('csrftoken')
-
+                        console.log(csrftoken)
                         $.ajaxSetup({
                             beforeSend: function(xhr){
                                 xhr.setRequestHeader("X-CSRFToken", csrftoken)
@@ -53,7 +53,7 @@
                             token: function(token){
                                 $.post(
                                     "{% url 'checkout' 'stripe' %}",
-                                    {'stripeToken': token.id, 'csfrmiddlewaretoken': csrftoken},
+                                    {stripeToken: token.id, csrfmiddlewaretoken: csrftoken},
                                     function(data){
                                         window.location.replace(data['redirect_url'])
                                     }
