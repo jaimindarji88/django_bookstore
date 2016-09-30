@@ -99,8 +99,8 @@ def checkout(request, processor):
 
 
 # need paypal developer account to get the account_id and account_secret for use with the paypal api
-id = '***REMOVED***'
-secret = '***REMOVED***'
+id = ''
+secret = ''
 
 
 def checkout_paypal(request, cart, orders):
@@ -212,7 +212,7 @@ def complete_order(request, processor):
         return redirect('index')
 
 def checkout_stripe(cart, orders, token):
-    stripe.api_key = "sk_test_uTs4d8Q2eKuDuMPYcq77KvxO"
+    stripe.api_key = ""
     total = 0
     for order in orders:
         total += (order.book.price * order.quantity)
